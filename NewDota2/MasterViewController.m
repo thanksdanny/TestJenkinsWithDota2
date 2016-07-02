@@ -99,6 +99,9 @@
     NSURL *apiURL = [NSURL URLWithString:@"http://www.dota2.com/jsfeed/abilitydata"];
     
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:apiURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//        if (!data) {
+//            NSLog(@"lol");
+//        }
         NSDictionary *abilityData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil][@"abilityData"];
         // 上面这句代码与之前有些不同，结尾处添加个字段[@"abilitydata"]去获取对应数据
         
@@ -114,6 +117,7 @@
 - (void)setupDataSource {
     // 判断 ListData
     if ([[NSFileManager defaultManager] fileExistsAtPath:[docPath stringByAppendingPathComponent:@"ListData.plist"]]) {
+        NSLog(@"有ListData.plist");
         self.heroList = [NSArray arrayWithContentsOfFile:[docPath stringByAppendingPathComponent:@"ListData.plist"]];
     } else {
         [self fetchHeroListData];
@@ -121,6 +125,7 @@
     
     // 判断 DetailData
     if ([[NSFileManager defaultManager] fileExistsAtPath:[docPath stringByAppendingPathComponent:@"DetailData.plist"]]) {
+        NSLog(@"有DetailData.plist");
         self.herosDetail = [NSDictionary dictionaryWithContentsOfFile:[docPath stringByAppendingPathComponent:@"DetailData.plist"]];
     } else {
         [self fetchHeroDetailData];
@@ -138,12 +143,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"TODETAIL"]) {
-//        DetailTableViewController *detailVC = [segue destinationViewController];
-//        NSString *selectedHero = [self.heroList[self.tableView.indexPathForSelectedRow.row][@"name"] stringByReplacingOccurrencesOfString:@"npc_dota_hero_" withString:@""];
-//        detailVC.hero = self.herosDetail[selectedHero]; // 把json字典传给detailVC
-//        
-//        NSString *urlString = [NSString stringWithFormat:@"http://cdn.dota2.com/apps/dota2/images/heroes/%@_vert.jpg", [self.heroList[self.tableView.indexPathForSelectedRow.row][@"name"] stringByReplacingOccurrencesOfString:@"npc_dota_hero_" withString:@""]];
-//        detailVC.fullImageURL = [NSURL URLWithString:urlString]; // 把url传过去
+        DetailTableViewController *detailVC = [segue destinationViewController];
+        
+        NSString *selectedHero = [self.heroList[self.tableView.indexPathForSelectedRow.row][@"name"] stringByReplacingOccurrencesOfString:@"npc_dota_hero_" withString:@""];
+        detailVC.heroName = selectedHero;//只需把名字转过去即可，不需把后面的那串json传过去 // self.herosDetail[selectedHero]; // 把json字典传给detailVC
+        
     }
 }
 
