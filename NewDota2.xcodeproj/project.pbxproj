@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD35231B1D27B8F10056CC55 /* mainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD35231A1D27B8F10056CC55 /* mainStoryboard.storyboard */; };
+		FD3523221D27BAC70056CC55 /* Heros.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD3523211D27BAC70056CC55 /* Heros.plist */; };
+		FD90722D1D1D6474003CAD5A /* HeroTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD90722C1D1D6474003CAD5A /* HeroTableViewCell.m */; };
 		FDEFF1A31CE879010062A2B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEFF1A21CE879010062A2B7 /* main.m */; };
 		FDEFF1A61CE879010062A2B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEFF1A51CE879010062A2B7 /* AppDelegate.m */; };
 		FDEFF1AE1CE879010062A2B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDEFF1AD1CE879010062A2B7 /* Assets.xcassets */; };
@@ -16,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD35231A1D27B8F10056CC55 /* mainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = mainStoryboard.storyboard; sourceTree = "<group>"; };
+		FD3523211D27BAC70056CC55 /* Heros.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Heros.plist; sourceTree = "<group>"; };
+		FD90722B1D1D6474003CAD5A /* HeroTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroTableViewCell.h; sourceTree = "<group>"; };
+		FD90722C1D1D6474003CAD5A /* HeroTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroTableViewCell.m; sourceTree = "<group>"; };
 		FDEFF19E1CE879010062A2B7 /* NewDota2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewDota2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDEFF1A21CE879010062A2B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FDEFF1A41CE879010062A2B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -40,6 +47,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD35231C1D27B90F0056CC55 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FDEFF1B81CE9FA9F0062A2B7 /* MasterViewController.h */,
+				FDEFF1B91CE9FA9F0062A2B7 /* MasterViewController.m */,
+				FDEFF1BB1CEB3FA50062A2B7 /* DetailViewController.h */,
+				FDEFF1BC1CEB3FA50062A2B7 /* DetailViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FD35231D1D27B9230056CC55 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FD90722B1D1D6474003CAD5A /* HeroTableViewCell.h */,
+				FD90722C1D1D6474003CAD5A /* HeroTableViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FD35231E1D27B9370056CC55 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Modals;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		FDEFF1951CE879010062A2B7 = {
 			isa = PBXGroup;
 			children = (
@@ -59,15 +94,12 @@
 		FDEFF1A01CE879010062A2B7 /* NewDota2 */ = {
 			isa = PBXGroup;
 			children = (
-				FDEFF1A41CE879010062A2B7 /* AppDelegate.h */,
-				FDEFF1A51CE879010062A2B7 /* AppDelegate.m */,
-				FDEFF1B81CE9FA9F0062A2B7 /* MasterViewController.h */,
-				FDEFF1B91CE9FA9F0062A2B7 /* MasterViewController.m */,
-				FDEFF1BB1CEB3FA50062A2B7 /* DetailViewController.h */,
-				FDEFF1BC1CEB3FA50062A2B7 /* DetailViewController.m */,
+				FD35231E1D27B9370056CC55 /* Modals */,
+				FD35231D1D27B9230056CC55 /* Views */,
+				FD35231C1D27B90F0056CC55 /* ViewControllers */,
+				FD35231A1D27B8F10056CC55 /* mainStoryboard.storyboard */,
+				FD3523211D27BAC70056CC55 /* Heros.plist */,
 				FDEFF1AD1CE879010062A2B7 /* Assets.xcassets */,
-				FDEFF1AF1CE879010062A2B7 /* LaunchScreen.storyboard */,
-				FDEFF1B21CE879010062A2B7 /* Info.plist */,
 				FDEFF1A11CE879010062A2B7 /* Supporting Files */,
 			);
 			path = NewDota2;
@@ -76,6 +108,10 @@
 		FDEFF1A11CE879010062A2B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FDEFF1A41CE879010062A2B7 /* AppDelegate.h */,
+				FDEFF1A51CE879010062A2B7 /* AppDelegate.m */,
+				FDEFF1AF1CE879010062A2B7 /* LaunchScreen.storyboard */,
+				FDEFF1B21CE879010062A2B7 /* Info.plist */,
 				FDEFF1A21CE879010062A2B7 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -141,6 +177,8 @@
 			files = (
 				FDEFF1B11CE879010062A2B7 /* LaunchScreen.storyboard in Resources */,
 				FDEFF1AE1CE879010062A2B7 /* Assets.xcassets in Resources */,
+				FD3523221D27BAC70056CC55 /* Heros.plist in Resources */,
+				FD35231B1D27B8F10056CC55 /* mainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +192,7 @@
 				FDEFF1A61CE879010062A2B7 /* AppDelegate.m in Sources */,
 				FDEFF1BA1CE9FA9F0062A2B7 /* MasterViewController.m in Sources */,
 				FDEFF1A31CE879010062A2B7 /* main.m in Sources */,
+				FD90722D1D1D6474003CAD5A /* HeroTableViewCell.m in Sources */,
 				FDEFF1BD1CEB3FA50062A2B7 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,7 @@
 //
 
 #import "MasterViewController.h"
+#import "DetailViewController.h"
 
 @interface MasterViewController ()
 
@@ -21,6 +22,7 @@
     
     self.heroList = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Heros" ofType:@"plist"]];
     
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,7 +30,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+
+# pragma mark - segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"TODETAIL"]) {
+        DetailViewController *detailVC = [segue destinationViewController];
+        detailVC.hero = self.heroList[self.tableView.indexPathForSelectedRow.row];
+    }
+}
+
+# pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -45,16 +57,5 @@
     
     return cell;
 }
-
-
-
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-
-
-
 
 @end

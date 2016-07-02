@@ -10,13 +10,20 @@
 
 @interface DetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+
 @end
 
 @implementation DetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.imageView.clipsToBounds = YES;
+    self.imageView.image = [UIImage imageNamed:[[self.hero[@"name"]lowercaseString]stringByAppendingString:@"_full.png"]];
+    self.textView.text = self.hero[@"bio"];
+    self.title = self.hero[@"name"];
 }
 
 - (void)didReceiveMemoryWarning {

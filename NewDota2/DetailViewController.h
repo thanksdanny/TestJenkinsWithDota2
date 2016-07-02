@@ -10,4 +10,7 @@
 
 @interface DetailViewController : UIViewController
 
+@property NSDictionary *hero;
+
+
 @end
