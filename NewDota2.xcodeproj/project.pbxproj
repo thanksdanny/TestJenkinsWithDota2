@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B08A9CF350C2929CC7C69BB0 /* libPods-NewDota2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAFD870C0EB5131F84FA211 /* libPods-NewDota2.a */; };
 		FD35231B1D27B8F10056CC55 /* mainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD35231A1D27B8F10056CC55 /* mainStoryboard.storyboard */; };
 		FD3523221D27BAC70056CC55 /* Heros.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD3523211D27BAC70056CC55 /* Heros.plist */; };
 		FD90722D1D1D6474003CAD5A /* HeroTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD90722C1D1D6474003CAD5A /* HeroTableViewCell.m */; };
@@ -19,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33269D99303A063BDE384D44 /* Pods-NewDota2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewDota2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewDota2/Pods-NewDota2.debug.xcconfig"; sourceTree = "<group>"; };
+		C2E7DD3B3D12E4352D998EF2 /* Pods-NewDota2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewDota2.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewDota2/Pods-NewDota2.release.xcconfig"; sourceTree = "<group>"; };
+		DCAFD870C0EB5131F84FA211 /* libPods-NewDota2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NewDota2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD35231A1D27B8F10056CC55 /* mainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = mainStoryboard.storyboard; sourceTree = "<group>"; };
 		FD3523211D27BAC70056CC55 /* Heros.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Heros.plist; sourceTree = "<group>"; };
 		FD90722B1D1D6474003CAD5A /* HeroTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroTableViewCell.h; sourceTree = "<group>"; };
@@ -41,12 +45,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B08A9CF350C2929CC7C69BB0 /* libPods-NewDota2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5195D61DA6F3B6CCAD43543B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				33269D99303A063BDE384D44 /* Pods-NewDota2.debug.xcconfig */,
+				C2E7DD3B3D12E4352D998EF2 /* Pods-NewDota2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EB8FF2DC7B98294363809487 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCAFD870C0EB5131F84FA211 /* libPods-NewDota2.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FD35231C1D27B90F0056CC55 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +102,8 @@
 			children = (
 				FDEFF1A01CE879010062A2B7 /* NewDota2 */,
 				FDEFF19F1CE879010062A2B7 /* Products */,
+				5195D61DA6F3B6CCAD43543B /* Pods */,
+				EB8FF2DC7B98294363809487 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,9 +148,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FDEFF1B51CE879010062A2B7 /* Build configuration list for PBXNativeTarget "NewDota2" */;
 			buildPhases = (
+				962C21C7C22C280433203DD8 /* [CP] Check Pods Manifest.lock */,
 				FDEFF19A1CE879010062A2B7 /* Sources */,
 				FDEFF19B1CE879010062A2B7 /* Frameworks */,
 				FDEFF19C1CE879010062A2B7 /* Resources */,
+				C5C45F43FF9A761B5AD09C3B /* [CP] Embed Pods Frameworks */,
+				86CDFB01064544C9B033F75C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -183,6 +210,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		86CDFB01064544C9B033F75C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NewDota2/Pods-NewDota2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		962C21C7C22C280433203DD8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C5C45F43FF9A761B5AD09C3B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NewDota2/Pods-NewDota2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FDEFF19A1CE879010062A2B7 /* Sources */ = {
@@ -295,6 +370,7 @@
 		};
 		FDEFF1B61CE879010062A2B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33269D99303A063BDE384D44 /* Pods-NewDota2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NewDota2/Info.plist;
@@ -306,6 +382,7 @@
 		};
 		FDEFF1B71CE879010062A2B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2E7DD3B3D12E4352D998EF2 /* Pods-NewDota2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NewDota2/Info.plist;
