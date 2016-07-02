@@ -11,6 +11,6 @@
 @interface DetailViewController : UIViewController
 
 @property NSDictionary *hero;
-
+@property NSURL *fullImageURL; // 暴露出url，然后再拼接成地址下载大图
 
 @end

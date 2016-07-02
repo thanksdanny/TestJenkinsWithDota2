@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import <UIImageView+WebCache.h>
 
 @interface DetailViewController ()
 
@@ -20,25 +21,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.imageView.clipsToBounds = YES;
-    self.imageView.image = [UIImage imageNamed:[[self.hero[@"name"]lowercaseString]stringByAppendingString:@"_full.png"]];
+    [self configureUI];
+}
+
+- (void)configureUI {
     self.textView.text = self.hero[@"bio"];
+    [self.imageView sd_setImageWithURL:self.fullImageURL];
     self.title = self.hero[@"name"];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
