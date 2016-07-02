@@ -10,13 +10,15 @@
 		B08A9CF350C2929CC7C69BB0 /* libPods-NewDota2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAFD870C0EB5131F84FA211 /* libPods-NewDota2.a */; };
 		FD35231B1D27B8F10056CC55 /* mainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD35231A1D27B8F10056CC55 /* mainStoryboard.storyboard */; };
 		FD3523221D27BAC70056CC55 /* Heros.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD3523211D27BAC70056CC55 /* Heros.plist */; };
+		FD3523251D2810040056CC55 /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3523241D2810040056CC55 /* DetailTableViewController.m */; };
+		FD3523281D281BCB0056CC55 /* AbilityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3523271D281BCB0056CC55 /* AbilityCell.m */; };
+		FD35232B1D281BE70056CC55 /* BioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD35232A1D281BE70056CC55 /* BioCell.m */; };
 		FD90722D1D1D6474003CAD5A /* HeroTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD90722C1D1D6474003CAD5A /* HeroTableViewCell.m */; };
 		FDEFF1A31CE879010062A2B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEFF1A21CE879010062A2B7 /* main.m */; };
 		FDEFF1A61CE879010062A2B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEFF1A51CE879010062A2B7 /* AppDelegate.m */; };
 		FDEFF1AE1CE879010062A2B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDEFF1AD1CE879010062A2B7 /* Assets.xcassets */; };
 		FDEFF1B11CE879010062A2B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDEFF1AF1CE879010062A2B7 /* LaunchScreen.storyboard */; };
 		FDEFF1BA1CE9FA9F0062A2B7 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEFF1B91CE9FA9F0062A2B7 /* MasterViewController.m */; };
-		FDEFF1BD1CEB3FA50062A2B7 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEFF1BC1CEB3FA50062A2B7 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,12 @@
 		DCAFD870C0EB5131F84FA211 /* libPods-NewDota2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NewDota2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD35231A1D27B8F10056CC55 /* mainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = mainStoryboard.storyboard; sourceTree = "<group>"; };
 		FD3523211D27BAC70056CC55 /* Heros.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Heros.plist; sourceTree = "<group>"; };
+		FD3523231D2810040056CC55 /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
+		FD3523241D2810040056CC55 /* DetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewController.m; sourceTree = "<group>"; };
+		FD3523261D281BCB0056CC55 /* AbilityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbilityCell.h; sourceTree = "<group>"; };
+		FD3523271D281BCB0056CC55 /* AbilityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbilityCell.m; sourceTree = "<group>"; };
+		FD3523291D281BE70056CC55 /* BioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BioCell.h; sourceTree = "<group>"; };
+		FD35232A1D281BE70056CC55 /* BioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BioCell.m; sourceTree = "<group>"; };
 		FD90722B1D1D6474003CAD5A /* HeroTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroTableViewCell.h; sourceTree = "<group>"; };
 		FD90722C1D1D6474003CAD5A /* HeroTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroTableViewCell.m; sourceTree = "<group>"; };
 		FDEFF19E1CE879010062A2B7 /* NewDota2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewDota2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,8 +44,6 @@
 		FDEFF1B21CE879010062A2B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDEFF1B81CE9FA9F0062A2B7 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		FDEFF1B91CE9FA9F0062A2B7 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		FDEFF1BB1CEB3FA50062A2B7 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		FDEFF1BC1CEB3FA50062A2B7 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +80,8 @@
 			children = (
 				FDEFF1B81CE9FA9F0062A2B7 /* MasterViewController.h */,
 				FDEFF1B91CE9FA9F0062A2B7 /* MasterViewController.m */,
-				FDEFF1BB1CEB3FA50062A2B7 /* DetailViewController.h */,
-				FDEFF1BC1CEB3FA50062A2B7 /* DetailViewController.m */,
+				FD3523231D2810040056CC55 /* DetailTableViewController.h */,
+				FD3523241D2810040056CC55 /* DetailTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -85,6 +91,10 @@
 			children = (
 				FD90722B1D1D6474003CAD5A /* HeroTableViewCell.h */,
 				FD90722C1D1D6474003CAD5A /* HeroTableViewCell.m */,
+				FD3523261D281BCB0056CC55 /* AbilityCell.h */,
+				FD3523271D281BCB0056CC55 /* AbilityCell.m */,
+				FD3523291D281BE70056CC55 /* BioCell.h */,
+				FD35232A1D281BE70056CC55 /* BioCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -264,11 +274,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD3523251D2810040056CC55 /* DetailTableViewController.m in Sources */,
+				FD35232B1D281BE70056CC55 /* BioCell.m in Sources */,
 				FDEFF1A61CE879010062A2B7 /* AppDelegate.m in Sources */,
 				FDEFF1BA1CE9FA9F0062A2B7 /* MasterViewController.m in Sources */,
 				FDEFF1A31CE879010062A2B7 /* main.m in Sources */,
+				FD3523281D281BCB0056CC55 /* AbilityCell.m in Sources */,
 				FD90722D1D1D6474003CAD5A /* HeroTableViewCell.m in Sources */,
-				FDEFF1BD1CEB3FA50062A2B7 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
