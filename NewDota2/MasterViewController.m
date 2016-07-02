@@ -10,6 +10,9 @@
 #import "DetailViewController.h"
 #import "HeroTableViewCell.h"
 
+#define kAPI_KEY @"87294A1C296C1FB71635BC8CA95F2028"
+//http://www.dota2/jsfeed/he
+
 @interface MasterViewController ()
 
 @property (nonatomic, strong) NSArray *heroList;
@@ -28,7 +31,22 @@
 
 - (void)configureUI {
     self.title = @"Dota 2 Heropedia";
-    self.heroList = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Heros" ofType:@"plist"]];
+    
+    
+    NSURL *apiURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.steampowered.com/IEconDOTA2_570/GetHeroes/v0001/?key=%@&language=zh_cn", kAPI_KEY]];
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:apiURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        NSLog(@"%@", json[@"result"][@"heroes"]);
+        self.heroList = json[@"result"][@"heroes"];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{ // 强制在主线程执行
+            [self.tableView reloadData]; // 取回来以后要reload一下data
+        });
+    }];
+    
+    [dataTask resume];
 }
 
 
@@ -54,8 +72,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HeroTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-//    cell.iconImageView.image = [UIImage imageNamed:[self.heroList[indexPath.row][@"name"]stringByAppendingString:@"_hphover.png"]];
-    cell.nameLabel.text = self.heroList[indexPath.row][@"name"];
+    cell.nameLabel.text = self.heroList[indexPath.row][@"localized_name"];
     cell.typeLabel.text = self.heroList[indexPath.row][@"type"];
     
     return cell;
