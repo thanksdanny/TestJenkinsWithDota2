@@ -10,8 +10,9 @@
 
 @interface HeroTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) UIImageView *iconImageView;
-@property (nonatomic, strong) UILabel *nameLabel;
-@property (nonatomic, strong) UILabel *typeLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+
 
 @end

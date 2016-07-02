@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "HeroTableViewCell.h"
 
 @interface MasterViewController ()
 
@@ -20,14 +21,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.heroList = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Heros" ofType:@"plist"]];
-    
-    
+    [self configureUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - configure UI
+
+- (void)configureUI {
+    self.title = @"Dota 2 Heropedia";
+    self.heroList = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Heros" ofType:@"plist"]];
 }
 
 
@@ -51,9 +52,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    HeroTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    cell.textLabel.text = self.heroList[indexPath.row][@"name"];
+//    cell.iconImageView.image = [UIImage imageNamed:[self.heroList[indexPath.row][@"name"]stringByAppendingString:@"_hphover.png"]];
+    cell.nameLabel.text = self.heroList[indexPath.row][@"name"];
+    cell.typeLabel.text = self.heroList[indexPath.row][@"type"];
     
     return cell;
 }
