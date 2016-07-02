@@ -9,6 +9,7 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "HeroTableViewCell.h"
+#import <UIImageView+WebCache.h>
 
 #define kAPI_KEY @"87294A1C296C1FB71635BC8CA95F2028"
 //http://www.dota2/jsfeed/he
@@ -47,6 +48,8 @@
     }];
     
     [dataTask resume];
+    
+    NSLog(@"%@", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]);
 }
 
 
@@ -72,6 +75,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HeroTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
+    // stringByReplacingOccurrencesOfString 去掉字段中的npc_dota_hero_ 然后拼接字符串
+    NSString *urlString = [NSString stringWithFormat:@"http://cdn.dota2.com/apps/dota2/images/heroes/%@_full.png", [self.heroList[indexPath.row][@"name"] stringByReplacingOccurrencesOfString:@"npc_dota_hero_" withString:@""]];
+    
+    [cell.iconImageView sd_setImageWithURL:[NSURL URLWithString:urlString]];
     cell.nameLabel.text = self.heroList[indexPath.row][@"localized_name"];
     cell.typeLabel.text = self.heroList[indexPath.row][@"type"];
     

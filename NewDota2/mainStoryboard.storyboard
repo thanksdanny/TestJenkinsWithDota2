@@ -40,7 +40,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="iconImageView" destination="nrO-jc-4r1" id="QIo-vo-x26"/>
+                                    <outlet property="iconImageView" destination="GL3-ys-qJq" id="n9W-E8-viG"/>
                                     <outlet property="nameLabel" destination="cq1-UF-hkY" id="8ad-PV-BD5"/>
                                     <outlet property="typeLabel" destination="vAr-k8-fpr" id="Tbn-LU-Ze0"/>
                                     <segue destination="Zhu-iY-zvw" kind="show" identifier="TODETAIL" id="G9G-2W-Ari"/>
