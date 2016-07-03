@@ -99,10 +99,8 @@
     NSURL *apiURL = [NSURL URLWithString:@"http://www.dota2.com/jsfeed/abilitydata"];
     
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:apiURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-//        if (!data) {
-//            NSLog(@"lol");
-//        }
-        NSDictionary *abilityData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil][@"abilityData"];
+
+        NSDictionary *abilityData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil][@"abilitydata"];
         // 上面这句代码与之前有些不同，结尾处添加个字段[@"abilitydata"]去获取对应数据
         
         // 存储到plist

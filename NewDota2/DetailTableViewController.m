@@ -45,7 +45,6 @@
     
     // 取ability
     NSDictionary *allAbility = [NSDictionary dictionaryWithContentsOfFile:[docPath stringByAppendingPathComponent:@"AbilityData.plist"]];
-    
     // 因为技能是以（英雄名字_技能名）json格式做拼接，所以遍历出技能
     self.abilityList = [NSMutableDictionary dictionary];
     for (NSString *name in allAbility) {
